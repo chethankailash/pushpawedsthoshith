@@ -1,0 +1,665 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-body: 'Cormorant Garamond', serif;
+  --font-cursive: 'Great Vibes', cursive;
+  --bg-deep: #130f17;
+  --bg-soft: #25192b;
+  --ink: #fff8f2;
+  --ink-muted: #f6e6db;
+  --accent: #ffcf9f;
+  --accent-strong: #ffaf7d;
+  --glass-bg: rgba(22, 12, 28, 0.45);
+  --glass-border: rgba(255, 234, 219, 0.35);
+  --glass-shadow: 0 26px 60px rgba(0, 0, 0, 0.35);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 176, 125, 0.2), transparent 45%),
+    radial-gradient(circle at 90% 8%, rgba(255, 226, 206, 0.13), transparent 40%),
+    linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-soft) 100%);
+  color: var(--ink);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.main-shell {
+  width: 100%;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(16px);
+}
+
+section {
+  position: relative;
+  padding: 5.5rem 0;
+}
+
+.section-container {
+  width: min(1120px, calc(100% - 2.2rem));
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-cursive);
+  text-align: center;
+  font-size: clamp(2.3rem, 7vw, 5rem);
+  color: var(--ink);
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.36);
+}
+
+.section-subtitle {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+  color: var(--ink-muted);
+}
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  inset: -14%;
+  background-image:
+    linear-gradient(rgba(18, 10, 23, 0.34), rgba(12, 8, 18, 0.78)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.42 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 70%, rgba(255, 183, 127, 0.32), transparent 45%),
+    radial-gradient(circle at 70% 15%, rgba(255, 226, 196, 0.28), transparent 35%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(900px, calc(100% - 2rem));
+}
+
+.hero-frame {
+  padding: clamp(2rem, 5vw, 3rem);
+  border-radius: 28px;
+  text-align: center;
+  background: rgba(26, 14, 34, 0.52);
+  border: 1px solid rgba(255, 231, 212, 0.4);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero-eyebrow {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.hero-title {
+  margin-top: 0.45rem;
+  line-height: 1.02;
+}
+
+.title-line {
+  display: block;
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  text-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.title-line.highlight {
+  font-family: var(--font-cursive);
+  color: var(--accent);
+  font-size: clamp(3.2rem, 10vw, 7rem);
+}
+
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+  color: var(--ink-muted);
+}
+
+.hero-names {
+  margin-top: 1.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.hero-names .name {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  font-family: var(--font-cursive);
+  color: #ffe7d8;
+}
+
+.hero-names .ampersand {
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.hero-date {
+  margin-top: 0.7rem;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+.hero-actions {
+  margin-top: 1.7rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.hero-action-button,
+.hero-action-link {
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.3rem;
+  font-size: 1rem;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.hero-action-button {
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #371b14;
+  font-weight: 700;
+  box-shadow: 0 10px 24px rgba(255, 175, 125, 0.34);
+}
+
+.hero-action-link {
+  border: 1px solid rgba(255, 239, 228, 0.5);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-action-button:hover,
+.hero-action-link:hover {
+  transform: translateY(-2px);
+}
+
+.scroll-indicator {
+  margin-top: 1.3rem;
+  color: rgba(255, 237, 224, 0.9);
+  font-size: 0.95rem;
+}
+
+.scroll-arrow {
+  margin-top: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.countdown-section {
+  background:
+    linear-gradient(rgba(24, 15, 33, 0.88), rgba(20, 12, 29, 0.9)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.48 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.countdown {
+  margin-top: 2.1rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.countdown-card {
+  padding: 1.4rem 1rem;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 227, 209, 0.34);
+  backdrop-filter: blur(8px);
+}
+
+.countdown-number {
+  display: block;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1;
+  color: var(--accent);
+}
+
+.countdown-label {
+  display: block;
+  margin-top: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.countdown-complete {
+  margin-top: 2rem;
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.story-section {
+  background:
+    linear-gradient(rgba(20, 11, 27, 0.72), rgba(16, 9, 24, 0.84)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.43 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.story-content {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.story-text-card {
+  border-radius: 22px;
+  padding: 2rem;
+}
+
+.story-paragraph {
+  font-size: 1.2rem;
+  color: #ffece1;
+}
+
+.story-paragraph + .story-paragraph {
+  margin-top: 1rem;
+}
+
+.highlight-text {
+  font-family: var(--font-cursive);
+  color: var(--accent);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.2;
+}
+
+.story-photo-stack {
+  position: relative;
+  min-height: 410px;
+}
+
+.story-photo {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 231, 212, 0.35);
+  box-shadow: var(--glass-shadow);
+}
+
+.story-photo-large {
+  inset: 0 16% 0 0;
+}
+
+.story-photo-small {
+  width: 44%;
+  height: 48%;
+  right: 0;
+  bottom: -10%;
+}
+
+.gallery-section {
+  background:
+    linear-gradient(rgba(18, 10, 24, 0.85), rgba(12, 7, 16, 0.92)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.45 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 225, 205, 0.22);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 250ms ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(rgba(19, 11, 23, 0.12), rgba(19, 11, 23, 0.68));
+  opacity: 0;
+  transition: opacity 230ms ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-icon {
+  border: 1px solid rgba(255, 232, 216, 0.5);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 5, 12, 0.93);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+  padding: 1.4rem;
+}
+
+.gallery-modal-content {
+  width: min(950px, 100%);
+  position: relative;
+}
+
+.gallery-close {
+  position: absolute;
+  right: 0;
+  top: -2.5rem;
+  border: 1px solid rgba(255, 233, 215, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff6ef;
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.gallery-modal-image {
+  border-radius: 18px;
+  height: min(76vh, 760px);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.venue-section {
+  background:
+    linear-gradient(rgba(18, 10, 23, 0.82), rgba(18, 10, 23, 0.82)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.44 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.venue-content {
+  margin-top: 2.3rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.venue-preview {
+  min-height: 360px;
+  border-radius: 22px;
+  background-image: url('/images/WhatsApp Image 2026-02-20 at 2.43.49 PM.jpeg');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 233, 216, 0.28);
+  box-shadow: var(--glass-shadow);
+}
+
+.venue-info {
+  border-radius: 22px;
+  padding: 2rem;
+}
+
+.venue-name {
+  font-family: var(--font-cursive);
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--accent);
+}
+
+.venue-details {
+  margin-top: 1rem;
+}
+
+.venue-detail-item + .venue-detail-item {
+  margin-top: 1rem;
+}
+
+.venue-detail-item strong {
+  color: #ffd9bd;
+}
+
+.venue-map-button {
+  margin-top: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  text-decoration: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #361a15;
+  font-weight: 700;
+}
+
+.events-section {
+  background:
+    linear-gradient(rgba(20, 11, 27, 0.72), rgba(16, 9, 24, 0.84)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.46 PM (1).jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.events-grid {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.event-card {
+  border-radius: 22px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+}
+
+.event-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.event-name {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.event-date {
+  font-size: 1.2rem;
+  color: var(--ink);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.event-time {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.event-venue {
+  font-size: 0.9rem;
+  color: var(--accent);
+  font-style: italic;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 227, 209, 0.2);
+}
+
+.calendar-section {
+  background:
+    linear-gradient(rgba(19, 11, 24, 0.86), rgba(12, 7, 16, 0.9)),
+    url('/images/WhatsApp Image 2026-02-20 at 2.43.46 PM (1).jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.calendar-grid {
+  margin-top: 2.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.calendar-card {
+  border-radius: 22px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.calendar-event-title {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.calendar-event-date {
+  font-size: 1.1rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.calendar-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.calendar-button {
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.calendar-button:hover {
+  transform: translateY(-2px);
+}
+
+.calendar-button-primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #361a15;
+  box-shadow: 0 10px 24px rgba(255, 175, 125, 0.34);
+}
+
+.calendar-button-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+  border: 1px solid rgba(255, 239, 228, 0.5);
+}
+
+.calendar-note {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 860px) {
+  .countdown {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .story-content,
+  .venue-content {
+    grid-template-columns: 1fr;
+  }
+
+  .story-photo-stack {
+    min-height: 330px;
+  }
+
+  .story-photo-small {
+    right: 0.4rem;
+    bottom: -0.6rem;
+    width: 42%;
+    height: 45%;
+  }
+}
+
+@media (max-width: 560px) {
+  section {
+    padding: 4rem 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .countdown {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

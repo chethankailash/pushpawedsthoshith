@@ -1,13 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-
 export default function CalendarReminder() {
-  const [copied, setCopied] = useState(false)
-
-  // Reception: March 7, 2026 7:00 PM IST = March 7, 2026 1:30 PM UTC
   const receptionDate = new Date('2026-03-07T13:30:00Z')
-  // Muhurtham: March 8, 2026 10:30 AM IST = March 8, 2026 5:00 AM UTC
   const muhurthamDate = new Date('2026-03-08T05:00:00Z')
 
   const formatDateForCalendar = (date: Date) => {
@@ -60,7 +54,7 @@ export default function CalendarReminder() {
         <div className="calendar-grid">
           <div className="calendar-card glass-card">
             <h3 className="calendar-event-title">Reception</h3>
-            <div className="calendar-event-date">March 7, 2026 at 7:00 PM IST</div>
+            <div className="calendar-event-date">March 7, 2026 at 7:00 PM</div>
             <div className="calendar-buttons">
               <a
                 href={generateGoogleCalendarURL(
@@ -93,7 +87,7 @@ export default function CalendarReminder() {
           </div>
           <div className="calendar-card glass-card">
             <h3 className="calendar-event-title">Muhurtham</h3>
-            <div className="calendar-event-date">March 8, 2026 at 10:30 AM IST</div>
+            <div className="calendar-event-date">March 8, 2026 at 10:30 AM</div>
             <div className="calendar-buttons">
               <a
                 href={generateGoogleCalendarURL(

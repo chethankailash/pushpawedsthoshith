@@ -18,13 +18,13 @@ export default function Venue() {
               <div className="venue-detail-item">
                 <div>
                   <strong>Muhurtham</strong>
-                  <p>March 8, 2026 at 10:30 AM IST</p>
+                  <p>March 8, 2026 at 10:30 AM</p>
                 </div>
               </div>
               <div className="venue-detail-item">
                 <div>
                   <strong>Reception</strong>
-                  <p>March 7, 2026 at 7:00 PM IST onwards</p>
+                  <p>March 7, 2026 at 7:00 PM onwards</p>
                 </div>
               </div>
             </div>

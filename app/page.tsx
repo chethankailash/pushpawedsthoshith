@@ -5,11 +5,15 @@ import OurStory from '@/components/OurStory'
 import Venue from '@/components/Venue'
 import Events from '@/components/Events'
 import CalendarReminder from '@/components/CalendarReminder'
+import { readdirSync } from 'fs'
+import { join } from 'path'
 
 export default function Home() {
-  // March 8, 2026 10:30 AM IST (IST is UTC+5:30)
-  // Converting to UTC: 10:30 AM IST = 5:00 AM UTC
   const weddingDate = '2026-03-08T05:00:00Z'
+  const photos = readdirSync(join(process.cwd(), 'public', 'images'))
+    .filter((file) => /\.(jpe?g|png|webp|avif)$/i.test(file))
+    .sort((a, b) => a.localeCompare(b))
+    .map((file) => `/images/${file}`)
 
   return (
     <main className="main-shell">
@@ -17,13 +21,13 @@ export default function Home() {
       <section id="countdown" className="countdown-section">
         <div className="section-container">
           <h2 className="section-title">Countdown to Our Special Day</h2>
-          <p className="section-subtitle">March 8, 2026 at 10:30 AM IST</p>
+          <p className="section-subtitle">March 8, 2026 at 10:30 AM</p>
           <Countdown weddingDate={weddingDate} />
         </div>
       </section>
       <Events />
       <OurStory />
-      <PhotoGallery />
+      <PhotoGallery photos={photos} />
       <Venue />
       <CalendarReminder />
     </main>

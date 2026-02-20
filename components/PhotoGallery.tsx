@@ -2,24 +2,12 @@
 
 import { useState } from 'react'
 
-export default function PhotoGallery() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+interface PhotoGalleryProps {
+  photos: string[]
+}
 
-  const photos = [
-    '/images/WhatsApp Image 2026-02-20 at 2.43.42 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.43 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.44 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.45 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.46 PM (1).jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.46 PM (2).jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.46 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.47 PM (1).jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.47 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.48 PM (1).jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.48 PM (2).jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.48 PM.jpeg',
-    '/images/WhatsApp Image 2026-02-20 at 2.43.49 PM.jpeg',
-  ]
+export default function PhotoGallery({ photos }: PhotoGalleryProps) {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   return (
     <section id="gallery" className="gallery-section">

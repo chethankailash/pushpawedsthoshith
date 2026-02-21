@@ -8,6 +8,7 @@ interface PhotoGalleryProps {
 
 export default function PhotoGallery({ photos }: PhotoGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const normalizedPhotos = photos.map((photo) => encodeURI(photo))
 
   return (
     <section id="gallery" className="gallery-section">
@@ -15,16 +16,14 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
         <h2 className="section-title">Our Memories</h2>
         <p className="section-subtitle">Captured moments we will always keep close</p>
         <div className="gallery-grid">
-          {photos.map((photo, index) => (
+          {normalizedPhotos.map((photo, index) => (
             <button
               key={photo}
               type="button"
               className="gallery-item"
               onClick={() => setSelectedImage(index)}
-              style={{
-                backgroundImage: `url(${photo})`,
-              }}
             >
+              <img src={photo} alt={`Memory ${index + 1}`} className="gallery-item-image" />
               <div className="gallery-overlay">
                 <span className="gallery-icon">View</span>
               </div>
@@ -44,10 +43,13 @@ export default function PhotoGallery({ photos }: PhotoGalleryProps) {
               </button>
               <div
                 className="gallery-modal-image"
-                style={{
-                  backgroundImage: `url(${photos[selectedImage]})`,
-                }}
-              />
+              >
+                <img
+                  src={normalizedPhotos[selectedImage]}
+                  alt={`Selected memory ${selectedImage + 1}`}
+                  className="gallery-modal-image-tag"
+                />
+              </div>
             </div>
           </div>
         )}

@@ -1,5 +1,8 @@
 # Wedding Website with Live Countdown
 
+
+## CHECKOUT : pushpawedsthoshith.vercel.app
+
 A stunning, modern Next.js wedding website featuring a real-time countdown timer, photo gallery, and beautiful UX design. Ready to deploy on Vercel.
 
 ## ✨ Features

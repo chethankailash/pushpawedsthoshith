@@ -35,15 +35,11 @@ export default function Hero() {
           <div className="hero-date">March 8, 2026 | 10:30 AM</div>
           <div className="hero-actions">
             <a href="#countdown" className="hero-action-button">
-              See Countdown
+              View Countdown
             </a>
             <a href="#events" className="hero-action-link">
               View Events
             </a>
-          </div>
-          <div className="scroll-indicator">
-            <span>Scroll to explore</span>
-            <div className="scroll-arrow">v</div>
           </div>
         </div>
       </div>

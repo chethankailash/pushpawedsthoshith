@@ -18,7 +18,7 @@ export default function Venue() {
               <div className="venue-detail-item">
                 <div>
                   <strong>Muhurtham</strong>
-                  <p>March 8, 2026 at 10:30 AM</p>
+                  <p>March 8, 2026 at 10:05 AM</p>
                 </div>
               </div>
               <div className="venue-detail-item">

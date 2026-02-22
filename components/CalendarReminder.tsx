@@ -2,7 +2,7 @@
 
 export default function CalendarReminder() {
   const receptionDate = new Date('2026-03-07T13:30:00Z')
-  const muhurthamDate = new Date('2026-03-08T05:00:00Z')
+  const muhurthamDate = new Date('2026-03-08T04:35:00Z')
 
   const formatDateForCalendar = (date: Date) => {
     const year = date.getUTCFullYear()
@@ -87,7 +87,7 @@ export default function CalendarReminder() {
           </div>
           <div className="calendar-card glass-card">
             <h3 className="calendar-event-title">Muhurtham</h3>
-            <div className="calendar-event-date">March 8, 2026 at 10:30 AM</div>
+            <div className="calendar-event-date">March 8, 2026 at 10:05 AM</div>
             <div className="calendar-buttons">
               <a
                 href={generateGoogleCalendarURL(

@@ -15,7 +15,7 @@ export default function Events() {
           <div className="event-card glass-card">
             <h3 className="event-name">Muhurtham</h3>
             <div className="event-date">March 8, 2026</div>
-            <div className="event-time">10:30 AM</div>
+            <div className="event-time">10:05 AM</div>
             <p className="event-description">The sacred moment when we become one</p>
             <div className="event-venue">Jnana Bharathi Samudaya Bhavana</div>
           </div>

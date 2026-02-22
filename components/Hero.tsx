@@ -32,7 +32,7 @@ export default function Hero() {
             <span className="ampersand">and</span>
             <span className="name">Thoshith</span>
           </div>
-          <div className="hero-date">March 8, 2026 | 10:30 AM</div>
+          <div className="hero-date">March 8, 2026 | 10:05 AM</div>
           <div className="hero-actions">
             <a href="#countdown" className="hero-action-button">
               View Countdown

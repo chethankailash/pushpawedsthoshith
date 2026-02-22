@@ -9,7 +9,7 @@ import { readdirSync } from 'fs'
 import { join } from 'path'
 
 export default function Home() {
-  const weddingDate = '2026-03-08T05:00:00Z'
+  const weddingDate = '2026-03-08T04:35:00Z'
   const photos = readdirSync(join(process.cwd(), 'public', 'images'))
     .filter((file) => /\.(jpe?g|png|webp|avif)$/i.test(file))
     .sort((a, b) => a.localeCompare(b))
@@ -21,7 +21,7 @@ export default function Home() {
       <section id="countdown" className="countdown-section">
         <div className="section-container">
           <h2 className="section-title">Countdown to Our Special Day</h2>
-          <p className="section-subtitle">March 8, 2026 at 10:30 AM</p>
+          <p className="section-subtitle">March 8, 2026 at 10:05 AM</p>
           <Countdown weddingDate={weddingDate} />
         </div>
       </section>
